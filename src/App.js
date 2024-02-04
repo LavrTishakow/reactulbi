@@ -1,5 +1,8 @@
 import './App.css';
+import '@vkruglikov/react-telegram-web-app/lib/index.d.ts';
+import { MainButton } from '@vkruglikov/react-telegram-web-app';
 const tg = window.Telegram.WebApp;
+
 function App() {
 
   useEffect(() => {
@@ -7,14 +10,14 @@ function App() {
   }, [])
 
   const onClose = () => {
-    tg.onClose()
+    tg.close()
 
   }
 
   return (
     <div className="App">
       work
-      <button onClick={onClose}>Закрыть</button>
+      <MainButton text="Закрыть" onClick={onClose} />
     </div>
   );
 }
